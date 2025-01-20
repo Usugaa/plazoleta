@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: plazoleta
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/usuario
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    properties.hibernate.format_sql: true
+
+server:
+  port: 8090
+
+security:
+  jwt:
+    secret-key: pZcC7jT4kY5i9zUkHQ7T8kNZn1wXNCMoaLwHe4j3cG4=
+    expiration-time: 86400000 # Tiempo en milisegundos (24 horas)
+    refresh-token:
+      expiration: 604800000 # (7 dias)
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+    filter: true

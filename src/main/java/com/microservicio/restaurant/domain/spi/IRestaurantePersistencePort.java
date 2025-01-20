@@ -4,6 +4,7 @@ import com.microservicio.restaurant.domain.model.Restaurant;
 
 import java.util.List;
 
+
 public interface IRestaurantePersistencePort {
 
     Restaurant saveRestaurant(Restaurant restaurant);

@@ -6,7 +6,6 @@ import com.microservicio.restaurant.domain.model.Traceability;
 import com.microservicio.restaurant.domain.spi.IRestaurantePersistencePort;
 import com.microservicio.restaurant.domain.spi.ITraceabilityPersistencePort;
 import com.microservicio.restaurant.domain.spi.IUserPersistencePort;
-
 import java.util.List;
 
 public class RestaurantUseCase implements IRestaurantServicePort {

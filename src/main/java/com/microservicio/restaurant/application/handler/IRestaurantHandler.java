@@ -6,6 +6,7 @@ import com.microservicio.restaurant.application.dto.TraceabilityResponse;
 
 import java.util.List;
 
+
 public interface IRestaurantHandler {
 
     RestaurantResponse saveRestaurant(RestaurantRequest restaurantRequest);

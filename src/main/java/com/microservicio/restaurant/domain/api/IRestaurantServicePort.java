@@ -5,6 +5,7 @@ import com.microservicio.restaurant.domain.model.Traceability;
 
 import java.util.List;
 
+
 public interface IRestaurantServicePort {
 
     Restaurant saveRestaurant(Restaurant restaurant);

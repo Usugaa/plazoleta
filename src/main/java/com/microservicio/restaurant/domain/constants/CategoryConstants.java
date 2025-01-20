@@ -1,5 +1,6 @@
 package com.microservicio.restaurant.domain.constants;
 
+
 public class CategoryConstants {
 
     public static final Long APPETIZER = 1L;

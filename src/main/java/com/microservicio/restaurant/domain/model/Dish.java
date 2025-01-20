@@ -1,6 +1,5 @@
 package com.microservicio.restaurant.domain.model;
 
-
 public class Dish {
 
     private Long id;

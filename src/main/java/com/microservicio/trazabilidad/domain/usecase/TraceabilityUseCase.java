@@ -10,12 +10,12 @@ import java.util.stream.Collectors;
 
 public class TraceabilityUseCase implements ITraceabilityServicePort {
 
+
     private final ITraceabilityPersistencePort traceabilityPersistencePort;
 
     public TraceabilityUseCase(ITraceabilityPersistencePort traceabilityPersistencePort) {
         this.traceabilityPersistencePort = traceabilityPersistencePort;
     }
-
 
     @Override
     public void saveTraceability(Traceability traceability) {

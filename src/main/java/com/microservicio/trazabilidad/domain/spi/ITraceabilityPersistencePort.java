@@ -4,6 +4,7 @@ import com.microservicio.trazabilidad.domain.model.Traceability;
 
 import java.util.List;
 
+
 public interface ITraceabilityPersistencePort {
 
     void save(Traceability traceability);

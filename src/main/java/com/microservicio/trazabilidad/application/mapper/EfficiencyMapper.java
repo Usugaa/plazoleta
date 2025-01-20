@@ -3,7 +3,6 @@ package com.microservicio.trazabilidad.application.mapper;
 import com.microservicio.trazabilidad.application.dto.EmployeeEfficiencyResponse;
 import com.microservicio.trazabilidad.application.dto.OrderEfficiencyResponse;
 import com.microservicio.trazabilidad.domain.constants.OrderConstants;
-import com.microservicio.trazabilidad.domain.constants.RoleConstants;
 import com.microservicio.trazabilidad.domain.model.Traceability;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
 
 @Component
 public class EfficiencyMapper {

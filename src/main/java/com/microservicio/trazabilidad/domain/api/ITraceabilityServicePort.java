@@ -4,6 +4,7 @@ import com.microservicio.trazabilidad.domain.model.Traceability;
 
 import java.util.List;
 
+
 public interface ITraceabilityServicePort {
     void saveTraceability(Traceability traceability);
     List<Traceability> getTraceabilityByClient(String clientId);

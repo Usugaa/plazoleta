@@ -66,7 +66,6 @@ public class DishHandler implements IDishHandler{
         return dish.map(dishResponseMapper::toResponse);
     }
 
-
     @Override
     public DishResponse updateDishStatus(Long id, UpdateDishStatusRequest updateDishStatusRequest) {
         Dish updateDish = dishServicePort.updateDishStatus(id, updateDishStatusRequest.isActive());

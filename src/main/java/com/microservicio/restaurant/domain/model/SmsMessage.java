@@ -1,5 +1,6 @@
 package com.microservicio.restaurant.domain.model;
 
+
 public class SmsMessage {
 
     private final Long orderId;

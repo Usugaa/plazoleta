@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 @FeignClient(name = "mensajeria", url = "http://localhost:8084", configuration = FeignConfiguration.class)
 public interface SmsFeignClient {
 

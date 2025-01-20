@@ -11,7 +11,6 @@ import java.util.Optional;
 
 public interface IDishHandler {
 
-
     DishResponse saveDish(DishRequest dishRequest);
 
     DishResponse updateDishDescriptionAndPrice(Long id, UpdateDishRequest updateDishRequest);

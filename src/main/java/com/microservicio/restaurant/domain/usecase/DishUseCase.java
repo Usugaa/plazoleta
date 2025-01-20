@@ -38,7 +38,6 @@ public class DishUseCase implements IDishServicePort {
         return dishPersistencePort.updateDish(id, description, price);
     }
 
-
     @Override
     public Dish updateDishStatus(Long id, boolean active) {
         Optional<Dish> optionalDish = dishPersistencePort.findDishById(id);

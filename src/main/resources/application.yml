@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: trazabilidad
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/traceabilitydb
+      database: traceabilitydb
+      auto-index-creation: true
+
+server:
+  port: 8085
+
+security:
+  jwt:
+    secret-key: pZcC7jT4kY5i9zUkHQ7T8kNZn1wXNCMoaLwHe4j3cG4=
+    expiration-time: 86400000 # Tiempo en milisegundos (24 horas)
+    refresh-token:
+      expiration: 604800000 # (7 dias)
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html

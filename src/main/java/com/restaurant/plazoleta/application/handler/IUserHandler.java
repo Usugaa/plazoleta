@@ -5,7 +5,6 @@ import com.restaurant.plazoleta.application.dto.AuthResponse;
 import com.restaurant.plazoleta.application.dto.UserRequest;
 import com.restaurant.plazoleta.application.dto.UserResponse;
 
-
 public interface IUserHandler {
 
     UserResponse saveAdmin(UserRequest userRequest);

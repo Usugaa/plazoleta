@@ -5,7 +5,6 @@ import com.restaurant.plazoleta.domain.model.User;
 import com.restaurant.plazoleta.domain.spi.IUserPersistencePort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-
 public class UserUseCase implements IUserServicePort {
 
     private final IUserPersistencePort userPersistencePort;

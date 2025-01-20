@@ -1,5 +1,6 @@
 package com.restaurant.plazoleta.domain.constants;
 
+
 public class RoleConstants {
 
     public static final Long ADMINISTRADOR = 1L;

@@ -4,7 +4,6 @@ import com.microservicio.restaurant.application.dto.CreateOrderRequest;
 import com.microservicio.restaurant.application.dto.OrderResponse;
 import org.springframework.data.domain.Page;
 
-
 public interface IOrderHandler {
 
     OrderResponse createOrder(CreateOrderRequest createOrderRequest, Long clientId);

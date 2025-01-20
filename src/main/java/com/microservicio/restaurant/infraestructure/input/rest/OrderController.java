@@ -36,17 +36,15 @@ private final JwtService jwtService;
             summary = "Crear una nueva orden",
             description = "Crea una nueva orden en el sistema"
     )
-    @ApiResponses({
-            @ApiResponse(
-                    responseCode = "201",
-                    description = "Orden creada exitosamente",
-                    content = @Content(schema = @Schema(implementation = OrderResponse.class))
-            ),
-            @ApiResponse(
-                    responseCode = "400",
-                    description = "Datos de entrada inválidos"
-            )
-    })
+    @ApiResponse(
+            responseCode = "201",
+            description = "Orden creada exitosamente",
+            content = @Content(schema = @Schema(implementation = OrderResponse.class))
+    )
+    @ApiResponse(
+            responseCode = "400",
+            description = "Datos de entrada inválidos"
+    )
 
     @PostMapping("/saveOrder")
     public ResponseEntity<OrderResponse> createOrder(@RequestBody CreateOrderRequest createOrderRequest) {
@@ -170,11 +168,8 @@ private final JwtService jwtService;
             summary = "Entregar orden",
             description = "Marca una orden como entregada usando un PIN de seguridad"
     )
-
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Orden entregada exitosamente"),
-            @ApiResponse(responseCode = "400", description = "PIN inválido o error en la entrega")
-    })
+    @ApiResponse(responseCode = "200", description = "Orden entregada exitosamente")
+    @ApiResponse(responseCode = "400", description = "PIN inválido o error en la entrega")
     @PutMapping("/{orderId}/deliver")
     public ResponseEntity<Void> deliverOrder(
             @PathVariable Long orderId,

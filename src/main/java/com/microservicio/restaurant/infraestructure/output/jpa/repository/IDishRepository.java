@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
+
 public interface IDishRepository extends JpaRepository<DishEntity, Long> {
 
     List<DishEntity> findByRestaurantId(Long idRestaurant);

@@ -8,6 +8,7 @@ import com.microservicio.restaurant.application.dto.UpdateDishStatusRequest;
 import java.util.List;
 import java.util.Optional;
 
+
 public interface IDishHandler {
 
     DishResponse saveDish(DishRequest dishRequest);

@@ -7,7 +7,8 @@ import com.microservicio.restaurant.infraestructure.output.jpa.entity.Restaurant
 import org.springframework.stereotype.Component;
 
 @Component
-public class DishEntityMapper {
+public class
+DishEntityMapper {
 
     public DishEntity toEntity(Dish dish) {
         if (dish == null) {

@@ -12,6 +12,7 @@ public interface IDishServicePort {
 
     Optional<Dish> findDishById(Long id);
 
+
     Dish updateDish(Long id, String description, Long price);
 
     Dish updateDishStatus(Long id, boolean active);

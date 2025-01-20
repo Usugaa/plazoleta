@@ -5,6 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+
 public class UpdateDishRequest {
 
     private String description;

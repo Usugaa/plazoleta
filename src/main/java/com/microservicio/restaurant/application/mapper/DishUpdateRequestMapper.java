@@ -5,6 +5,7 @@ import com.microservicio.restaurant.domain.model.Dish;
 import org.springframework.stereotype.Component;
 
 @Component
+
 public class DishUpdateRequestMapper {
 
     public Dish toDishUpdate(UpdateDishRequest updateDishRequest) {

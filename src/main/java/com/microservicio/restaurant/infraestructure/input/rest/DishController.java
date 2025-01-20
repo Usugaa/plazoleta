@@ -9,7 +9,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
 
 @Tag(name = "DishEndPoint")
 @RestController
@@ -49,18 +47,15 @@ public class DishController {
             summary = "Obtener plato por ID",
             description = "Recupera la información de un plato específico por su ID"
     )
-    @ApiResponses({
-            @ApiResponse(
-                    responseCode = "200",
-                    description = "Plato encontrado",
-                    content = @Content(schema = @Schema(implementation = DishResponse.class))
-            ),
-
-            @ApiResponse(
-                    responseCode = "404",
-                    description = "Plato no encontrado"
-            )
-    })
+    @ApiResponse(
+            responseCode = "200",
+            description = "Plato encontrado",
+            content = @Content(schema = @Schema(implementation = DishResponse.class))
+    )
+    @ApiResponse(
+            responseCode = "404",
+            description = "Plato no encontrado"
+    )
     @GetMapping("/{id}")
     public ResponseEntity<DishResponse> getDishById(@PathVariable Long id) {
         Optional<DishResponse> dishResponse = dishHandler.findDishById(id);

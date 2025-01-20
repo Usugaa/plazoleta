@@ -1,5 +1,6 @@
 package com.microservicio.restaurant.domain.constants;
 
+
 public class OrderConstants {
 
     public static final Long AVAILABLE = 1L;

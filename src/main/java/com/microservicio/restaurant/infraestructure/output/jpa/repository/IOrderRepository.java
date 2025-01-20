@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
+
 public interface IOrderRepository extends JpaRepository<OrderEntity, Long> {
     List<OrderEntity> findByIdClientAndStatusIn(Long idClient, List<String> statuses);
 

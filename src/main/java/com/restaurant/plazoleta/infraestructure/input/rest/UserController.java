@@ -40,6 +40,26 @@ public class UserController {
         return new ResponseEntity<>(userResponse, HttpStatus.CREATED);
     }
 
+    @PostMapping("/employee")
+    @Operation(summary = "Create Employee User", description = "Create a new employee user")
+    @ApiResponse(responseCode = "201", description = "Employee user created successfully")
+    public ResponseEntity<UserResponse> saveEmployee(
+            @Parameter(description = "User details", required = true)
+            @RequestBody UserRequest userRequest) {
+        UserResponse userResponse = userHandler.saveEmployee(userRequest);
+        return new ResponseEntity<>(userResponse, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/client")
+    @Operation(summary = "Create Client User", description = "Create a new client user")
+    @ApiResponse(responseCode = "201", description = "Client user created successfully")
+    public ResponseEntity<UserResponse> saveClient(
+            @Parameter(description = "User details", required = true)
+            @RequestBody UserRequest userRequest) {
+        UserResponse userResponse = userHandler.saveClient(userRequest);
+        return new ResponseEntity<>(userResponse, HttpStatus.CREATED);
+    }
+
     @GetMapping("/{id}")
     @Operation(summary = "Get User by ID", description = "Retrieve user information by user ID")
     @ApiResponse(responseCode = "200", description = "User found")

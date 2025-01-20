@@ -16,6 +16,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
@@ -30,8 +31,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
         final String authHeader = request.getHeader("Authorization");
 
-        System.out.println("Debug - Auth Header: " + authHeader);
-
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
             return;
@@ -40,11 +39,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         try {
             String token = authHeader.substring(7);
 
-            System.out.println("Debug - Token: " + token);
-            System.out.println("Debug - Token length: " + token.length());
-
             boolean tokenValid = jwtService.isTokenValid(token);
-            System.out.println("Debug - Token Valid: " + tokenValid);
 
             if (!tokenValid) {
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Token expirado o inválido");
@@ -54,10 +49,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             String username = jwtService.extractUsername(token);
             Long role = jwtService.extractRole(token);
             Long userId = jwtService.extractUserId(token);
-
-            System.out.println("Debug - Extracted Username: " + username);
-            System.out.println("Debug - Extracted Role: " + role);
-            System.out.println("Debug - Extracted UserId: " + userId);
 
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                 // Crear UserDetails personalizado
@@ -86,7 +77,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
 
         } catch (Exception e) {
-            System.out.println("Debug - Full Exception:");
             e.printStackTrace();
 
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

@@ -4,7 +4,6 @@ import org.springframework.security.core.userdetails.User;
 
 import java.util.Collection;
 
-
 import org.springframework.security.core.GrantedAuthority;
 
 public class CustomUserDetails extends User {

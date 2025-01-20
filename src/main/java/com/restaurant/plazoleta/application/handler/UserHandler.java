@@ -42,6 +42,24 @@ public class UserHandler implements IUserHandler {
     }
 
     @Override
+    public UserResponse saveEmployee(UserRequest userRequest) {
+        // Asignar rol de Empleado
+        User user = userRequestMapper.toDomain(userRequest);
+        user.setIdRole(RoleConstants.EMPLEADO);
+        User savedUser = userServicePort.saveUser(user);
+        return userResponseMapper.toResponse(savedUser);
+    }
+
+    @Override
+    public UserResponse saveClient(UserRequest userRequest) {
+        // Asignar rol de Cliente
+        User user = userRequestMapper.toDomain(userRequest);
+        user.setIdRole(RoleConstants.CLIENTE);
+        User savedUser = userServicePort.saveUser(user);
+        return userResponseMapper.toResponse(savedUser);
+    }
+
+    @Override
     public UserResponse getUserById(Long id) {
         User user = userServicePort.getUserById(id);
         return userResponseMapper.toResponse(user);

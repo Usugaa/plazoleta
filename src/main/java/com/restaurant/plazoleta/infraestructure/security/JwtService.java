@@ -62,8 +62,6 @@ public class JwtService {
 
     public Claims extractClaims(String token) {
         try {
-            System.out.println("Secret Key: " + secretKey);
-            System.out.println("Decoded Key Bytes Length: " + Base64.getDecoder().decode(secretKey).length);
 
             return Jwts.parserBuilder()
                     .setSigningKey(getSigningKey())
@@ -71,7 +69,6 @@ public class JwtService {
                     .parseClaimsJws(token)
                     .getBody();
         } catch (Exception e) {
-            System.out.println("Full error details:");
             e.printStackTrace();
             throw new JwtAuthenticationException("Error al procesar el token: " + e.getMessage());
         }
